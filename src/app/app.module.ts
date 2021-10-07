@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { CategoryComponent } from './category/category.component';
+import { PokedexComponent } from './pokedex/pokedex.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     SearchbarComponent,
-    CategoryComponent
+    CategoryComponent,
+    PokedexComponent
   ],
   imports: [
     BrowserModule,

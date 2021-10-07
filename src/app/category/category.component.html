@@ -1,20 +1,28 @@
 <div
   class="
-    bg-gray-500
+    bg-gray-100
+    active:bg-gradient-to-r
+    active:from-[#3F2B96]
+    active:to-[#A8C0FF]
+    active:text-white
+    text-purple-600
     pl-4
     text-xl
     font-semibold
-    text-white
     rounded-lg
     py-8
     cursor-pointer
     transition
-    transform
-    md:hover:-translate-y-1
-    md:hover:shadow-xl
-    ease-in
     duration-100
+    transform
+    ease-in-out
+    md:hover:-translate-y-1
+    md:hover:shadow-lg
+    md:hover:bg-gradient-to-r
+    md:hover:from-[#3F2B96]
+    md:hover:to-[#A8C0FF]
+    md:hover:text-white
   "
 >
-  <p>Text</p>
+  <p>{{ name }}</p>
 </div>

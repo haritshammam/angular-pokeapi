@@ -1,6 +1,6 @@
 # AngularPokeapi
 
-This is a project with the purpose of learning Angular that is used at my internship place.
+This is an Angular practice project app with the purpose of learning Angular that is used at my internship place.
 
 By using PokeAPIv2, this app will be able to :
 
@@ -9,7 +9,7 @@ By using PokeAPIv2, this app will be able to :
 3. Add & Remove Pokemon from My Pokemons
 4. TBA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8. For the styling, I use TailwindCSS v2.2.16.
 
 ## Development server
 

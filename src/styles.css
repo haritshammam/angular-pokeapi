@@ -24,7 +24,7 @@
   .btn-round {
     @apply px-5 py-3
       bg-gray-200
-      text-gray-700
+      text-gray-800
       hover:bg-purple-700
       hover:text-white
       rounded-full
@@ -44,5 +44,11 @@
       transition 
       duration-100 
       ease-linear;
+  }
+
+  .my-bag-styles {
+    @apply bg-[#06D6A0]
+      hover:bg-[#32ad8c]
+      text-white;
   }
 }

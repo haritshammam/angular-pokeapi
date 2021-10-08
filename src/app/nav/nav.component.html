@@ -1,23 +1,58 @@
 <nav class="px-5 py-5 flex justify-between items-center">
-  <button 
-    (click)="back()"
+  <button class="btn-round" (click)="back()">Back</button>
+
+  <div class="btn-round" (click)="setMenuIsClicked(true)">
+    <div>Menu</div>
+  </div>
+
+  <div
+    *ngIf="menuIsClicked"
     class="
-      px-5 py-3
-      bg-gray-200
-      rounded-full
-      text-gray-800
-      font-semibold
-      hover:bg-purple-700
-      hover:text-white
+      bg-purple-700
+      px-5
+      py-8
+      absolute
+      right-0
+      top-0
+      h-full
+      w-full
+      md:w-3/12
       transition
-      duration-100
-      ease-linear
+      duration-150
+      text-white
+      font-bold
+      text-center
     "
   >
-    Back
-  </button>
-
-  <div>
-    <div>asdsadsa</div>
+    <button
+      class="
+        btn-round
+        bg-white
+        text-red-500
+        hover:bg-[#06D6A0] hover:text-[#035853]
+      "
+      (click)="setMenuIsClicked(false)"
+    >
+      X
+    </button>
+    <ul class="grid grid-cols-1 gap-4 mt-10">
+      <li>
+        <a
+          routerLink="/my-bag"
+          class="
+            nav-item
+            bg-[#06D6A0]
+            hover:bg-[#32ad8c]
+            text-[#035853]
+            hover:text-white
+          "
+          >My Bag</a>
+      </li>
+      <li><a class="nav-item" routerLink="/home">Home</a></li>
+      <li><a class="nav-item" routerLink="/pokedex-list">Pokédex</a></li>
+      <li><a class="nav-item" routerLink="/moves">Moves</a></li>
+      <li><a class="nav-item" routerLink="/items">Items</a></li>
+      <li><a class="nav-item" routerLink="/berries">Berries</a></li>
+    </ul>
   </div>
 </nav>

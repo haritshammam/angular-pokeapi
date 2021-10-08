@@ -13,6 +13,8 @@ import { ItemsComponent } from './items/items.component';
 import { BerriesComponent } from './berries/berries.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavComponent } from './nav/nav.component';
+import { BagComponent } from './bag/bag.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { NavComponent } from './nav/nav.component';
     BerriesComponent,
     PageNotFoundComponent,
     NavComponent,
+    BagComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,10 +38,12 @@ import { NavComponent } from './nav/nav.component';
       { path: 'moves', component: MovesComponent },
       { path: 'items', component: ItemsComponent },
       { path: 'berries', component: BerriesComponent },
+      { path: 'my-bag', component: BagComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent },
     ]),
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

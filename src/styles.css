@@ -2,8 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-4xl font-extrabold text-gray-800 md:text-center;
+  }
+
+  h2 {
+    @apply font-bold text-2xl text-gray-700;
+  }
+
+  section {
+    @apply mt-10;
+  }
+}
+
 @layer components {
   .page-container {
     @apply px-5 py-8;
+  }
+
+  .btn-round {
+    @apply px-5 py-3
+      bg-gray-200
+      text-gray-700
+      hover:bg-purple-700
+      hover:text-white
+      rounded-full
+      font-semibold
+      transition
+      duration-100
+      ease-linear
+      cursor-pointer;
+  }
+
+  .nav-item {
+    @apply py-3
+      w-full
+      block
+      hover:bg-purple-900 
+      rounded-full 
+      transition 
+      duration-100 
+      ease-linear;
   }
 }

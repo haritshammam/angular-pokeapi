@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { SearchbarComponent } from './searchbar/searchbar.component';
-import { CategoryComponent } from './category/category.component';
-import { PokedexComponent } from './pokedex/pokedex.component';
-import { MovesComponent } from './moves/moves.component';
-import { ItemsComponent } from './items/items.component';
-import { BerriesComponent } from './berries/berries.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { NavComponent } from './nav/nav.component';
-import { BagComponent } from './bag/bag.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { CategoryComponent } from './components/category/category.component';
+import { PokedexComponent } from './pages/pokedex/pokedex.component';
+import { MovesComponent } from './pages/moves/moves.component';
+import { ItemsComponent } from './pages/items/items.component';
+import { BerriesComponent } from './pages/berries/berries.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { NavComponent } from './components/nav/nav.component';
+import { BagComponent } from './pages/bag/bag.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -44,6 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ]),
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

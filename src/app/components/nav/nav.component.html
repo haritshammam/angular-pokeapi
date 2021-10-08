@@ -22,6 +22,7 @@
       text-white
       font-bold
       text-center
+      z-10
     "
   >
     <button
@@ -37,13 +38,11 @@
     </button>
     <ul class="grid grid-cols-1 gap-4 mt-10">
       <li>
-        <a class="nav-item my-bag-styles" routerLink="/my-bag">My Bag</a>
+        <a class="nav-item my-bag-styles" routerLink="/my-bag" (click)="setMenuIsClicked(false)">My Bag</a>
       </li>
-      <li><a class="nav-item" routerLink="/home">Home</a></li>
-      <li><a class="nav-item" routerLink="/pokedex-list">Pokédex</a></li>
-      <li><a class="nav-item" routerLink="/moves">Moves</a></li>
-      <li><a class="nav-item" routerLink="/items">Items</a></li>
-      <li><a class="nav-item" routerLink="/berries">Berries</a></li>
+      <li *ngFor="let navItem of navItems">
+        <a class="nav-item" [routerLink]="navItem.link" (click)="setMenuIsClicked(false)">{{ navItem.title }}</a>
+      </li>
     </ul>
   </div>
 </nav>

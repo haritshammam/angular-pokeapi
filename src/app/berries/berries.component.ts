@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-berries',
-  templateUrl: './berries.component.html',
-  styleUrls: ['./berries.component.scss']
+  templateUrl: './berries.component.html'
 })
 export class BerriesComponent implements OnInit {
 

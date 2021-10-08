@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+  templateUrl: './nav.component.html'
 })
 export class NavComponent implements OnInit {
+  constructor(private location: Location) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  back(): void {
+    this.location.back();
   }
 
+  ngOnInit(): void {}
 }

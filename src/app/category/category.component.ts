@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category',
@@ -6,7 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./category.component.scss'],
 })
 export class CategoryComponent implements OnInit {
-  @Input() name?: string = 'Name';
+  @Input() name: string = 'Name';
+  @Input() pageUrl: string = '/home';
+
+  constructor(private route: Router) {}
+
+  navigateToPage(pageUrl: string): void {
+    this.route.navigate([pageUrl]);
+  }
 
   ngOnInit(): void {}
 }

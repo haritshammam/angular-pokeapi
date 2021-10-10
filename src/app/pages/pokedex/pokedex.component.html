@@ -25,4 +25,10 @@
       class="absolute top-0 right-0 bg-gradient-to-l from-white h-12 w-1/12"
     ></div>
   </div>
+
+  <section>
+    <div *ngFor="let pokemon of pokemonList">
+      <h3>{{ pokemon.name }}</h3>
+    </div>
+  </section>
 </div>

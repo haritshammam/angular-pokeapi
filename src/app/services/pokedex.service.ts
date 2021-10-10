@@ -3,19 +3,29 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Poketype } from '../models/poketype';
+import { NameUrl } from '../models/base-name-url';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PokedexService {
   private baseUrl: string = 'https://pokeapi.co/api/v2/';
+  private getPokemonUrl: string = `${this.baseUrl}pokemon/?offset=0&limit=20`;
 
   constructor(private http: HttpClient) {}
 
-  getPokemonType(type: string = ""): Observable<Poketype[]> {
+  getPokemonType(type: string = ''): Observable<NameUrl[]> {
     return this.http
-      .get<Poketype[]>(this.baseUrl + 'type/' + type)
+      .get<NameUrl[]>(`${this.baseUrl}type/${type}`)
+      .pipe(map((x: any) => x.results));
+  }
+
+  getPokemonList(
+    offset: number = 0,
+    limit: number = 20
+  ): Observable<NameUrl[]> {
+    return this.http
+      .get<NameUrl[]>(`${this.baseUrl}pokemon/?offset=${offset}&limit=${limit}`)
       .pipe(map((x: any) => x.results));
   }
 }

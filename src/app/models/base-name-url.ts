@@ -1,4 +1,4 @@
-export interface Poketype {
+export interface NameUrl {
   name: string;
   url: string;
 }

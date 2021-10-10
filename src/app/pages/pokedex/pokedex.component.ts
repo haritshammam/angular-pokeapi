@@ -1,23 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { PokedexService } from '../../services/pokedex.service';
-import { Poketype } from '../../models/poketype';
+import { NameUrl } from 'src/app/models/base-name-url';
 
 @Component({
   selector: 'app-pokedex',
   templateUrl: './pokedex.component.html',
 })
 export class PokedexComponent implements OnInit {
-  pokemonTypes: Poketype[] = [];
+  public pokemonTypes: NameUrl[] = [];
+  public pokemonList: NameUrl[] = [];
 
   constructor(private pokedexService: PokedexService) {}
 
   ngOnInit(): void {
     this.getAllPokemonType();
+    this.getPokemonList();
   }
 
   getAllPokemonType(type?: string): void {
     this.pokedexService
       .getPokemonType()
       .subscribe((types) => (this.pokemonTypes = types));
+  }
+
+  getPokemonList(offset: number = 0, limit: number = 20): void {
+    this.pokedexService
+      .getPokemonList(offset, limit)
+      .subscribe((list) => (this.pokemonList = list));
   }
 }

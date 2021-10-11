@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { NameUrl } from '../models/base-name-url';
+import { Pokemon } from '../models/pokemon-details';
 
 @Injectable({
   providedIn: 'root',
@@ -27,5 +28,9 @@ export class PokedexService {
     return this.http
       .get<NameUrl[]>(`${this.baseUrl}pokemon/?offset=${offset}&limit=${limit}`)
       .pipe(map((x: any) => x.results));
+  }
+
+  getPokemonDetails(url: string): Observable<Pokemon> {
+    return this.http.get<Pokemon>(url);
   }
 }

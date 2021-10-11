@@ -16,6 +16,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { NavComponent } from './components/nav/nav.component';
 import { BagComponent } from './pages/bag/bag.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CardComponent } from './components/pokecard/pokecard.component';
+import { PokemonDetailsComponent } from './pages/pokemon-details/pokemon-details.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PageNotFoundComponent,
     NavComponent,
     BagComponent,
+    CardComponent,
+    PokemonDetailsComponent,
   ],
   imports: [
     BrowserModule,

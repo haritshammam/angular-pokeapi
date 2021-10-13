@@ -9,6 +9,7 @@ import { NameUrl } from 'src/app/models/base-name-url';
 export class PokedexComponent implements OnInit {
   public pokemonTypes: NameUrl[] = [];
   public pokemonList: NameUrl[] = [];
+  public pokemonDetails: any;
 
   constructor(private pokedexService: PokedexService) {}
 
@@ -23,7 +24,7 @@ export class PokedexComponent implements OnInit {
       .subscribe((types) => (this.pokemonTypes = types));
   }
 
-  getPokemonList(offset: number = 0, limit: number = 20): void {
+  getPokemonList(offset: number = 0, limit: number = 30): void {
     this.pokedexService
       .getPokemonList(offset, limit)
       .subscribe((list) => (this.pokemonList = list));

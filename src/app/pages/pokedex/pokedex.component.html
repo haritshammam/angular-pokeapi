@@ -26,7 +26,7 @@
     ></div>
   </div>
 
-  <section class="grid grid-cols-2 md:grid-cols-3 gap-4">
-    <app-pokecard *ngFor="let pokemon of pokemonList" [data]="pokemon"></app-pokecard>
+  <section class="card-grid-view">
+    <pokecard *ngFor="let pokemon of pokemonList" [data]="pokemon"></pokecard>
   </section>
 </div>

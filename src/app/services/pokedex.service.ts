@@ -27,7 +27,7 @@ export class PokedexService {
   ): Observable<NameUrl[]> {
     return this.http
       .get<NameUrl[]>(`${this.baseUrl}pokemon/?offset=${offset}&limit=${limit}`)
-      .pipe(map((x: any) => x.results));
+      .pipe(map((res: any) => res.results));
   }
 
   getPokemonDetails(url: string): Observable<Pokemon> {

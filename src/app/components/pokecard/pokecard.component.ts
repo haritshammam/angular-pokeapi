@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { PokedexService } from 'src/app/services/pokedex.service';
 
 @Component({
-  selector: 'app-pokecard',
+  selector: 'pokecard',
   templateUrl: './pokecard.component.html',
   styles: [],
 })

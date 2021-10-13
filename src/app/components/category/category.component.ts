@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-category',
+  selector: 'category',
   templateUrl: './category.component.html',
 })
 export class CategoryComponent implements OnInit {

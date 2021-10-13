@@ -51,4 +51,16 @@
       hover:bg-[#32ad8c]
       text-white;
   }
+
+  .text-label {
+    @apply bg-white bg-opacity-30 text-white font-semibold text-xs px-2 py-2 rounded-xl;
+  }
+
+  .card-grid-view {
+    @apply grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:px-10;
+  }
+
+  .card-image-view {
+    @apply absolute top-2 right-0 lg:top-0 lg:transform lg:translate-y-1/2 lg:right-2 xl:right-4 w-max  lg:bg-white lg:bg-opacity-30 rounded-full;
+  }
 }

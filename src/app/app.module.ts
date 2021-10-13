@@ -18,6 +18,7 @@ import { BagComponent } from './pages/bag/bag.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './components/pokecard/pokecard.component';
 import { PokemonDetailsComponent } from './pages/pokemon-details/pokemon-details.component';
+import { TextLabelComponent } from './components/text-label/text-label.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PokemonDetailsComponent } from './pages/pokemon-details/pokemon-details
     BagComponent,
     CardComponent,
     PokemonDetailsComponent,
+    TextLabelComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,45 @@
-<div class="bg-green-300 hover:bg-green-400 transition duration-100 ease-linear hover:cursor-pointer rounded-xl px-2 md:px-3 py-8 relative">
-  <p class="top-2 left-2 text-sm font-bold text-black text-opacity-40">#001</p>
+<div
+  [ngClass]="{
+    'pokemon-type-grass': getPokemonThemeColor('grass'),
+    'pokemon-type-fire': getPokemonThemeColor('fire'),
+    'pokemon-type-water': getPokemonThemeColor('water'),
+    'pokemon-type-normal': getPokemonThemeColor('normal'),
+    'pokemon-type-poison': getPokemonThemeColor('poison'),
+    'pokemon-type-bug': getPokemonThemeColor('bug'),
+    'pokemon-type-electric': getPokemonThemeColor('electric'),
+    'pokemon-type-ground': getPokemonThemeColor('ground')
+  }"
+  class="
+    transition
+    duration-100
+    ease-linear
+    hover:cursor-pointer
+    rounded-xl
+    px-3
+    py-6
+    2xl:p-6
+    flex
+    justify-between
+    items-center
+  "
+>
+  <div>
+    <span class="text-sm font-semibold text-black text-opacity-50">
+      {{ data.id }}
+    </span>
 
-  <p class="text-gray-800 font-bold mt-2">{{ data.name | titlecase }}</p>
+    <p class="text-gray-800 font-bold mt-1">{{ data.name | titlecase }}</p>
 
-  <div class="flex space-x-2 mt-2">
-    <text-label>Grass</text-label>
-    <text-label>Poison</text-label>
+    <div class="flex space-x-2 mt-2">
+      <text-label *ngFor="let type of data.details.types">{{
+        type | uppercase
+      }}</text-label>
+    </div>
   </div>
 
   <img
     class="card-image-view"
-    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+    src="{{ data.details.imageUrl }}"
     alt="bulbasaur"
   />
 </div>

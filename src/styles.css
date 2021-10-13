@@ -57,10 +57,44 @@
   }
 
   .card-grid-view {
-    @apply grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:px-10;
+    @apply grid md:grid-cols-2 xl:grid-cols-4 gap-4 md:px-10;
   }
 
   .card-image-view {
-    @apply absolute top-2 right-0 lg:top-0 lg:transform lg:translate-y-1/2 lg:right-2 xl:right-4 w-max  lg:bg-white lg:bg-opacity-30 rounded-full;
+    @apply  bg-white bg-opacity-30 rounded-full;
   }
+
+  /* ==========================  POKEMON TYPE THEME COLOR ========================== */
+  .pokemon-type-normal {
+    @apply bg-gray-300 hover:bg-gray-400;
+  }
+  
+  .pokemon-type-grass {
+    @apply bg-green-400 hover:bg-green-500;
+  }
+
+  .pokemon-type-bug {
+    @apply bg-[#458f58] hover:bg-[#3d814e];
+  }
+
+  .pokemon-type-fire {
+    @apply bg-red-400 hover:bg-red-500;
+  }
+
+  .pokemon-type-water {
+    @apply bg-blue-400 hover:bg-blue-500;
+  }
+
+  .pokemon-type-poison {
+    @apply bg-purple-400 hover:bg-purple-500;
+  }
+
+  .pokemon-type-electric {
+    @apply bg-yellow-400 hover:bg-yellow-500;
+  }
+
+  .pokemon-type-ground {
+    @apply bg-[#7e5f47] hover:bg-[#6d513b];
+  }
+  /* ==========================  END OF POKEMON TYPE THEME COLOR ========================== */
 }

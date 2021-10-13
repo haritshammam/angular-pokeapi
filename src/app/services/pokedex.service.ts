@@ -11,26 +11,30 @@ import { Pokemon } from '../models/pokemon-details';
 })
 export class PokedexService {
   private baseUrl: string = 'https://pokeapi.co/api/v2/';
-  private getPokemonUrl: string = `${this.baseUrl}pokemon/?offset=0&limit=20`;
 
   constructor(private http: HttpClient) {}
 
-  getPokemonType(type: string = ''): Observable<NameUrl[]> {
+  getAllPokemonTypeList(): Observable<NameUrl[]> {
     return this.http
-      .get<NameUrl[]>(`${this.baseUrl}type/${type}`)
+      .get<NameUrl[]>(`${this.baseUrl}type`)
       .pipe(map((x: any) => x.results));
   }
 
-  getPokemonList(
-    offset: number = 0,
-    limit: number = 20
-  ): Observable<NameUrl[]> {
+  getPokemonList(offset: number, limit: number): Observable<NameUrl[]> {
     return this.http
       .get<NameUrl[]>(`${this.baseUrl}pokemon/?offset=${offset}&limit=${limit}`)
       .pipe(map((res: any) => res.results));
   }
 
-  getPokemonDetails(url: string): Observable<Pokemon> {
+  getPokemonFromUrl(url: string): Observable<Pokemon> {
     return this.http.get<Pokemon>(url);
+  }
+
+  getPokemonBasedOnType(type: string): Observable<NameUrl[]> {
+    return this.http
+      .get<NameUrl[]>(`${this.baseUrl}type/${type}`)
+      .pipe(
+        map((res: any) => res.pokemon.map((pokemon: any) => pokemon.pokemon))
+      );
   }
 }

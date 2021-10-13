@@ -9,24 +9,29 @@ import { NameUrl } from 'src/app/models/base-name-url';
 export class PokedexComponent implements OnInit {
   public pokemonTypes: NameUrl[] = [];
   public pokemonList: NameUrl[] = [];
-  public pokemonDetails: any;
 
   constructor(private pokedexService: PokedexService) {}
 
   ngOnInit(): void {
-    this.getAllPokemonType();
+    this.getAllPokemonTypeList();
     this.getPokemonList();
   }
 
-  getAllPokemonType(type?: string): void {
+  getAllPokemonTypeList(): void {
     this.pokedexService
-      .getPokemonType()
+      .getAllPokemonTypeList()
       .subscribe((types) => (this.pokemonTypes = types));
   }
 
   getPokemonList(offset: number = 0, limit: number = 30): void {
     this.pokedexService
       .getPokemonList(offset, limit)
+      .subscribe((list) => (this.pokemonList = list));
+  }
+
+  getPokemonBasedOnType(type: string): void {
+    this.pokedexService
+      .getPokemonBasedOnType(type)
       .subscribe((list) => (this.pokemonList = list));
   }
 }

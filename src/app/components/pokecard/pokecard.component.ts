@@ -20,17 +20,4 @@ export class CardComponent implements OnInit {
   navigateToPage(pageUrl: string): void {
     this.route.navigate([pageUrl]);
   }
-
-  getPokemonDetails(url: string): void {
-    this.pokedexService.getPokemonDetails(url).subscribe(
-      (pokemon) =>
-        (this.pokemonDetailsData = {
-          pokemonId: pokemon.id,
-          pokemonName: pokemon.name,
-          pokemonAbilities: pokemon.abilities,
-          pokemonStats: pokemon.stats,
-          pokemonTypes: pokemon.types,
-        })
-    );
-  }
 }

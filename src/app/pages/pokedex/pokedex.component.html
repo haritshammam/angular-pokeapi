@@ -16,8 +16,12 @@
         md:pr-20
       "
     >
-      <button class="btn-round" (click)="getPokemonList()">All Type</button>
-      <button class="btn-round" *ngFor="let type of pokemonTypes" (click)="getPokemonBasedOnType(type.name)">
+      <button class="btn-round" (click)="getPokemonDetails()">All Type</button>
+      <button
+        class="btn-round"
+        *ngFor="let type of pokemonTypes"
+        (click)="getPokemonBasedOnType(type.name)"
+      >
         {{ type.name | titlecase }}
       </button>
     </div>
@@ -28,6 +32,10 @@
   </div>
 
   <section class="card-grid-view">
-    <pokecard *ngFor="let pokemon of pokemonDetails" [data]="pokemon"></pokecard>
+    <pokecard
+      *ngFor="let pokemon of pokemonDetails"
+      [data]="pokemon"
+      (click)="navigateToPokemonDetailsPage(pokemon.name)"
+    ></pokecard>
   </section>
 </div>

@@ -42,6 +42,7 @@ import { TextLabelComponent } from './components/text-label/text-label.component
     RouterModule.forRoot([
       { path: 'home', component: HomepageComponent },
       { path: 'pokedex-list', component: PokedexComponent },
+      { path: 'pokedex-list/:pokemonName', component: PokemonDetailsComponent },
       { path: 'moves', component: MovesComponent },
       { path: 'items', component: ItemsComponent },
       { path: 'berries', component: BerriesComponent },

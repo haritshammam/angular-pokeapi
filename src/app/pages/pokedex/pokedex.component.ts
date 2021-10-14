@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokedexService } from '../../services/pokedex.service';
 import { NameUrl } from 'src/app/models/base-name-url';
 import { Pokemon } from 'src/app/models/pokemon-details';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokedex',
@@ -12,12 +13,11 @@ export class PokedexComponent implements OnInit {
   public pokemonList: NameUrl[] = [];
   public pokemonDetails: Pokemon[] = [];
 
-  constructor(private pokedexService: PokedexService) {}
+  constructor(private pokedexService: PokedexService, private route: Router) {}
 
   ngOnInit(): void {
     this.getAllPokemonTypeList();
-    // this.getPokemonList();
-    this.getPokemonDetails()
+    this.getPokemonDetails();
   }
 
   getAllPokemonTypeList(): void {
@@ -32,15 +32,13 @@ export class PokedexComponent implements OnInit {
       .subscribe((list) => (this.pokemonList = list));
   }
 
-  getPokemonList(offset: number = 0, limit: number = 30): void {
-    this.pokedexService
-      .getPokemonList(offset, limit)
-      .subscribe((list) => (this.pokemonList = list));
-  }
-
   getPokemonDetails(offset: number = 0, limit: number = 30): void {
     this.pokedexService
       .getPokemonDetails(offset, limit)
       .subscribe((pokemonDetail) => (this.pokemonDetails = pokemonDetail));
+  }
+
+  navigateToPokemonDetailsPage(pokemonName: string): void {
+    this.route.navigate(['/pokedex-list/', pokemonName]);
   }
 }

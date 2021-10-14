@@ -2,9 +2,8 @@ import { NameUrl } from './base-name-url';
 import { VersionDetails } from './base-version-details';
 
 export interface Pokemon {
-  id: number;
+  pokemonId: number;
   name: string;
-  url: string;
   details: {
     imageUrl: string;
     types: string[];

@@ -17,7 +17,7 @@ export class PokedexService {
   getAllPokemonTypeList(): Observable<NameUrl[]> {
     return this.http
       .get<NameUrl[]>(`${this.baseUrl}type`)
-      .pipe(map((x: any) => x.results));
+      .pipe(map((res: any) => res.results));
   }
 
   getPokemonBasedOnType(type: string): Observable<NameUrl[]> {
@@ -34,12 +34,11 @@ export class PokedexService {
       .pipe(map((res: any) => res.results));
   }
 
-  getPokemonFromUrl(url: string): Observable<Pokemon> {
-    return this.http.get<Pokemon>(url).pipe(
+  getPokemonFromName(pokemonName: string): Observable<Pokemon> {
+    return this.http.get<Pokemon>(`${this.baseUrl}pokemon/${pokemonName}`).pipe(
       map((res: any) => ({
-        id: res.id,
+        pokemonId: res.id,
         name: res.name,
-        url: url,
         details: {
           imageUrl: res.sprites.front_default,
           types: res.types.map((type: any) => type.type.name),
@@ -61,7 +60,7 @@ export class PokedexService {
     return this.getPokemonList(offset, limit).pipe(
       mergeMap((res: any) => {
         const fetchObsList: [Observable<Pokemon>] = res.map((pokemon: any) =>
-          this.getPokemonFromUrl(pokemon.url)
+          this.getPokemonFromName(pokemon.name)
         );
         return forkJoin<Pokemon>(fetchObsList);
       })

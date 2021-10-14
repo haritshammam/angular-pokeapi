@@ -17,10 +17,6 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  navigateToPage(pageUrl: string): void {
-    this.route.navigate([pageUrl]);
-  }
-
   getPokemonThemeColor(theType: string) {
     return this.data.details.types[0] === theType;
   }

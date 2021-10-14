@@ -1,1 +1,5 @@
-<p>pokemon-details works!</p>
+<app-nav></app-nav>
+
+<div *ngIf="pokemon" class="page-container">
+  <pokecard [data]="pokemon"></pokecard>
+</div>

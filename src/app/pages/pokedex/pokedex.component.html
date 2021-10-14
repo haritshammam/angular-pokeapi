@@ -20,7 +20,7 @@
       <button
         class="btn-round"
         *ngFor="let type of pokemonTypes"
-        (click)="getPokemonBasedOnType(type.name)"
+        (click)="getPokemonDetailsBasedOnType(type.name)"
       >
         {{ type.name | titlecase }}
       </button>

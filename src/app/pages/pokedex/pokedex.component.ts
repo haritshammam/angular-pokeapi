@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class PokedexComponent implements OnInit {
   public pokemonTypes: NameUrl[] = [];
-  public pokemonList: NameUrl[] = [];
   public pokemonDetails: Pokemon[] = [];
 
   constructor(private pokedexService: PokedexService, private route: Router) {}
@@ -29,7 +28,13 @@ export class PokedexComponent implements OnInit {
   getPokemonBasedOnType(type: string): void {
     this.pokedexService
       .getPokemonBasedOnType(type)
-      .subscribe((list) => (this.pokemonList = list));
+      .subscribe((list) => (this.pokemonDetails = list));
+  }
+
+  getPokemonDetailsBasedOnType(type: string): void {
+    this.pokedexService
+      .getPokemonDetailsBasedOnType(type)
+      .subscribe((pokemonDetail) => (this.pokemonDetails = pokemonDetail));
   }
 
   getPokemonDetails(offset: number = 0, limit: number = 30): void {

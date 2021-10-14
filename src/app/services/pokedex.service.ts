@@ -20,12 +20,23 @@ export class PokedexService {
       .pipe(map((res: any) => res.results));
   }
 
-  getPokemonBasedOnType(type: string): Observable<NameUrl[]> {
+  getPokemonBasedOnType(type: string): Observable<Pokemon[]> {
     return this.http
       .get<NameUrl[]>(`${this.baseUrl}type/${type}`)
       .pipe(
         map((res: any) => res.pokemon.map((pokemon: any) => pokemon.pokemon))
       );
+  }
+
+  getPokemonDetailsBasedOnType(type: string): Observable<Pokemon[]> {
+    return this.getPokemonBasedOnType(type).pipe(
+      mergeMap((res: any) => {
+        const fetchObsList: [Observable<Pokemon>] = res.map((pokemon: any) =>
+          this.getPokemonFromName(pokemon.name)
+        );
+        return forkJoin<Pokemon>(fetchObsList);
+      })
+    );
   }
 
   getPokemonList(offset: number, limit: number): Observable<NameUrl[]> {

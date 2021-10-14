@@ -59,16 +59,11 @@
   .card-grid-view {
     @apply grid md:grid-cols-2 xl:grid-cols-4 gap-4 md:px-10;
   }
-
-  .card-image-view {
-    @apply  bg-white bg-opacity-30 rounded-full;
-  }
-
   /* ==========================  POKEMON TYPE THEME COLOR ========================== */
   .pokemon-type-normal {
     @apply bg-gray-300 hover:bg-gray-400;
   }
-  
+
   .pokemon-type-grass {
     @apply bg-green-400 hover:bg-green-500;
   }

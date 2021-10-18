@@ -18,8 +18,28 @@
     >
       <button class="btn-round" (click)="getPokemonDetails()">All Type</button>
       <button
-        class="btn-round"
         *ngFor="let type of pokemonTypes"
+        [ngClass]="{
+          'text-pokemon-type-normal': type.name === 'normal',
+          'text-pokemon-type-fighting': type.name === 'fighting',
+          'text-pokemon-type-flying': type.name === 'flying',
+          'text-pokemon-type-poison': type.name === 'poison',
+          'text-pokemon-type-ground': type.name === 'ground',
+          'text-pokemon-type-rock': type.name === 'rock',
+          'text-pokemon-type-bug': type.name === 'bug',
+          'text-pokemon-type-ghost': type.name === 'ghost',
+          'text-pokemon-type-steel': type.name === 'steel',
+          'text-pokemon-type-grass': type.name === 'grass',
+          'text-pokemon-type-fire': type.name === 'fire',
+          'text-pokemon-type-water': type.name === 'water',
+          'text-pokemon-type-electric': type.name === 'electric',
+          'text-pokemon-type-psychic': type.name === 'psychic',
+          'text-pokemon-type-ice': type.name === 'ice',
+          'text-pokemon-type-dragon': type.name === 'dragon',
+          'text-pokemon-type-dark': type.name === 'dark',
+          'text-pokemon-type-fairy': type.name === 'fairy'
+        }"
+        class="btn-round"
         (click)="getPokemonDetailsBasedOnType(type.name)"
       >
         {{ type.name | titlecase }}

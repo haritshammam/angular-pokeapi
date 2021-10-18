@@ -37,7 +37,7 @@ export class PokedexComponent implements OnInit {
       .subscribe((pokemonDetail) => (this.pokemonDetails = pokemonDetail));
   }
 
-  getPokemonDetails(offset: number = 0, limit: number = 30): void {
+  getPokemonDetails(offset: number = 0, limit: number = 32): void {
     this.pokedexService
       .getPokemonDetails(offset, limit)
       .subscribe((pokemonDetail) => (this.pokemonDetails = pokemonDetail));

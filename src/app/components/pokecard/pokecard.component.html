@@ -1,18 +1,9 @@
 <div
-  [ngClass]="{
-    'pokemon-type-grass': getPokemonThemeColor('grass'),
-    'pokemon-type-fire': getPokemonThemeColor('fire'),
-    'pokemon-type-water': getPokemonThemeColor('water'),
-    'pokemon-type-normal': getPokemonThemeColor('normal'),
-    'pokemon-type-poison': getPokemonThemeColor('poison'),
-    'pokemon-type-bug': getPokemonThemeColor('bug'),
-    'pokemon-type-electric': getPokemonThemeColor('electric'),
-    'pokemon-type-ground': getPokemonThemeColor('ground')
-  }"
+  [ngClass]="getPokemonThemeColor('bg', data.details.types[0], 'hover')"
   class="
+    bg-gray-100
     transition
     duration-100
-    ease-linear
     hover:cursor-pointer
     rounded-xl
     px-3
@@ -21,25 +12,29 @@
     flex
     justify-between
     items-center
+    group
+    card-hover-translate-y
   "
 >
   <div>
     <span class="text-sm font-semibold text-black text-opacity-50">
-      {{ data.pokemonId }}
+      #{{ data.pokemonId }}
     </span>
 
-    <p class="text-gray-800 font-bold mt-1">{{ data.name | titlecase }}</p>
+    <p class="text-gray-800 group-hover:text-white font-bold mt-1">
+      {{ data.name | titlecase }}
+    </p>
 
     <div class="flex space-x-2 mt-2">
-      <text-label *ngFor="let type of data.details.types">{{
-        type | uppercase
-      }}</text-label>
+      <p
+        *ngFor="let type of data.details.types"
+        [ngClass]="getPokemonThemeColor('bg', type)"
+        class="text-label"
+      >
+        {{ type | titlecase }}
+      </p>
     </div>
   </div>
 
-  <img
-    
-    src="{{ data.details.imageUrl }}"
-    alt="{{ data.name | titlecase }}"
-  />
+  <img src="{{ data.details.imageUrl }}" alt="{{ data.name | titlecase }}" />
 </div>

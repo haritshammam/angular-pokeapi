@@ -1,5 +1,28 @@
-<nav class="px-5 py-5 flex justify-between items-center">
+<nav
+  class="
+    px-5
+    py-5
+    flex
+    justify-between
+    items-center
+    sticky
+    top-0
+    z-50
+    bg-white
+    shadow-sm
+  "
+>
   <button class="btn-round" (click)="back()">Back</button>
+
+  <div>
+    <a routerLink="/home">
+      <img
+        src="/assets/pokedexlogo.png"
+        alt="Pokedex Logo"
+        class="h-4 md:h-8"
+      />
+    </a>
+  </div>
 
   <div class="btn-round" (click)="setMenuIsClicked(true)">
     <div>Menu</div>
@@ -14,7 +37,7 @@
       absolute
       right-0
       top-0
-      h-full
+      h-screen
       w-full
       md:w-3/12
       transition
@@ -38,10 +61,20 @@
     </button>
     <ul class="grid grid-cols-1 gap-4 mt-10">
       <li>
-        <a class="nav-item my-bag-styles" routerLink="/my-bag" (click)="setMenuIsClicked(false)">My Bag</a>
+        <a
+          class="nav-item my-bag-styles"
+          routerLink="/my-bag"
+          (click)="setMenuIsClicked(false)"
+          >My Bag</a
+        >
       </li>
       <li *ngFor="let navItem of navItems">
-        <a class="nav-item" [routerLink]="navItem.link" (click)="setMenuIsClicked(false)">{{ navItem.title }}</a>
+        <a
+          class="nav-item"
+          [routerLink]="navItem.link"
+          (click)="setMenuIsClicked(false)"
+          >{{ navItem.title }}</a
+        >
       </li>
     </ul>
   </div>

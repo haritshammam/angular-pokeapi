@@ -18,12 +18,12 @@
 
 @layer components {
   .page-container {
-    @apply px-5 py-8;
+    @apply px-5 xl:px-8 py-6;
   }
 
   .btn-round {
     @apply px-5 py-3
-      bg-gray-200
+      bg-gray-100
       text-gray-800
       hover:bg-purple-700
       hover:text-white
@@ -53,43 +53,162 @@
   }
 
   .text-label {
-    @apply bg-white bg-opacity-30 text-white font-semibold text-xs px-2 py-2 rounded-xl;
+    @apply bg-gray-300 transition ease-out duration-75 group-hover:bg-white group-hover:bg-opacity-30 text-white font-semibold text-xs px-2 py-2 rounded-xl;
   }
 
   .card-grid-view {
     @apply grid md:grid-cols-2 xl:grid-cols-4 gap-4 md:px-10;
   }
+
+  .card-hover-translate-y {
+    @apply transform ease-in-out md:hover:-translate-y-1 md:hover:shadow-lg;
+  }
+
   /* ==========================  POKEMON TYPE THEME COLOR ========================== */
-  .pokemon-type-normal {
-    @apply bg-gray-300 hover:bg-gray-400;
+  /* Background */
+  .bg-pokemon-type-normal {
+    @apply bg-gray-500;
   }
 
-  .pokemon-type-grass {
-    @apply bg-green-400 hover:bg-green-500;
+  .bg-pokemon-type-fighting {
+    @apply bg-[#e67f57];
   }
 
-  .pokemon-type-bug {
-    @apply bg-[#458f58] hover:bg-[#3d814e];
+  .bg-pokemon-type-flying {
+    @apply bg-[#469eb4];
   }
 
-  .pokemon-type-fire {
-    @apply bg-red-400 hover:bg-red-500;
+  .bg-pokemon-type-poison {
+    @apply bg-purple-400;
   }
 
-  .pokemon-type-water {
-    @apply bg-blue-400 hover:bg-blue-500;
+  .bg-pokemon-type-ground {
+    @apply bg-[#7e5f47];
   }
 
-  .pokemon-type-poison {
-    @apply bg-purple-400 hover:bg-purple-500;
+  .bg-pokemon-type-rock {
+    @apply bg-[#5e4532];
   }
 
-  .pokemon-type-electric {
-    @apply bg-yellow-400 hover:bg-yellow-500;
+  .bg-pokemon-type-bug {
+    @apply bg-[#458f58];
   }
 
-  .pokemon-type-ground {
-    @apply bg-[#7e5f47] hover:bg-[#6d513b];
+  .bg-pokemon-type-ghost {
+    @apply bg-[#5f458f];
+  }
+
+  .bg-pokemon-type-steel {
+    @apply bg-[#6b898a];
+  }
+
+  .bg-pokemon-type-grass {
+    @apply bg-green-400;
+  }
+
+  .bg-pokemon-type-fire {
+    @apply bg-red-500;
+  }
+
+  .bg-pokemon-type-water {
+    @apply bg-blue-500;
+  }
+
+  .bg-pokemon-type-electric {
+    @apply bg-yellow-400;
+  }
+
+  .bg-pokemon-type-psychic {
+    @apply bg-[#d361cd];
+  }
+
+  .bg-pokemon-type-ice {
+    @apply bg-[#4764e6];
+  }
+
+  .bg-pokemon-type-dragon {
+    @apply bg-[#c9b543];
+  }
+
+  .bg-pokemon-type-dark {
+    @apply bg-[#2d2842];
+  }
+
+  .bg-pokemon-type-fairy {
+    @apply bg-[#b83969];
+  }
+  /* ============================== */
+  /* Text Color */
+  .text-pokemon-type-normal {
+    @apply text-gray-500;
+  }
+
+  .text-pokemon-type-fighting {
+    @apply text-[#e67f57];
+  }
+
+  .text-pokemon-type-flying {
+    @apply text-[#469eb4];
+  }
+
+  .text-pokemon-type-poison {
+    @apply text-purple-400;
+  }
+
+  .text-pokemon-type-ground {
+    @apply text-[#7e5f47];
+  }
+
+  .text-pokemon-type-rock {
+    @apply text-[#5e4532];
+  }
+
+  .text-pokemon-type-bug {
+    @apply text-[#458f58];
+  }
+
+  .text-pokemon-type-ghost {
+    @apply text-[#5f458f];
+  }
+
+  .text-pokemon-type-steel {
+    @apply text-[#6b898a];
+  }
+
+  .text-pokemon-type-grass {
+    @apply text-green-400;
+  }
+
+  .text-pokemon-type-fire {
+    @apply text-red-500;
+  }
+
+  .text-pokemon-type-water {
+    @apply text-blue-500;
+  }
+
+  .text-pokemon-type-electric {
+    @apply text-yellow-400;
+  }
+
+  .text-pokemon-type-psychic {
+    @apply text-[#d361cd];
+  }
+
+  .text-pokemon-type-ice {
+    @apply text-[#4764e6];
+  }
+
+  .text-pokemon-type-dragon {
+    @apply text-[#c9b543];
+  }
+
+  .text-pokemon-type-dark {
+    @apply text-[#2d2842];
+  }
+
+  .text-pokemon-type-fairy {
+    @apply text-[#b83969];
   }
   /* ==========================  END OF POKEMON TYPE THEME COLOR ========================== */
 }

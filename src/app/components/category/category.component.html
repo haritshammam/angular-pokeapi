@@ -16,6 +16,7 @@
     duration-100
     transform
     ease-in-out
+    group
     md:hover:-translate-y-1
     md:hover:shadow-lg
     md:hover:bg-gradient-to-r
@@ -25,5 +26,5 @@
   "
   (click)="navigateToPage(pageUrl)"
 >
-  <p>{{ name }}</p>
+  <p class="group-hover:text-white">{{ name }}</p>
 </div>

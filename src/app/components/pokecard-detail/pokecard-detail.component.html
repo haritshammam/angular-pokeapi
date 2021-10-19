@@ -1,0 +1,61 @@
+<div class="bg-gray-100 rounded-xl px-5 pb-6 mx-auto max-w-md">
+  <div class="flex justify-between items-end">
+    <div>
+      <h2 class="text-gray-500">#{{ data.pokemonId }}</h2>
+      <h2>{{ data.name | titlecase }}</h2>
+
+      <div class="flex space-x-2 mt-2">
+        <p
+          *ngFor="let type of data.details.types"
+          class="text-label"
+          [ngClass]="getPokemonThemeColor('bg', type)"
+        >
+          {{ type | titlecase }}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="mt-5 rounded-2xl sm:w-1/3 p-3 flex justify-center"
+      [ngClass]="getPokemonThemeColor('bg', data.details.types[0])"
+    >
+      <img src="{{ data.details.imageUrl }}" alt="{{ data.name }}" />
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h3>Base Stats</h3>
+    <div class="mt-2 space-y-2">
+      <p *ngFor="let stat of data.details.stats" class="text-sm">
+        {{ stat.name | uppercase }}:
+        <span class="font-bold">{{ stat.base }}</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h3>Abilities</h3>
+    <div class="mt-2 space-y-2">
+      <p
+        *ngFor="let ability of data.details.abilitiesName"
+        class="font-semibold text-sm"
+      >
+        {{ ability | titlecase }}
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h3>Biological Information</h3>
+    <div class="mt-2 space-y-2">
+      <p class="text-sm">
+        Weight:
+        <span class="font-bold">{{ data.details.weight }} kg</span>
+      </p>
+      <p class="text-sm">
+        Height:
+        <span class="font-bold">{{ data.details.height * 10 }} cm</span>
+      </p>
+    </div>
+  </div>
+</div>

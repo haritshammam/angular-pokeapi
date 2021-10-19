@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './components/pokecard/pokecard.component';
 import { PokemonDetailsComponent } from './pages/pokemon-details/pokemon-details.component';
 import { TextLabelComponent } from './components/text-label/text-label.component';
+import { PokecardDetailComponent } from './components/pokecard-detail/pokecard-detail.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TextLabelComponent } from './components/text-label/text-label.component
     CardComponent,
     PokemonDetailsComponent,
     TextLabelComponent,
+    PokecardDetailComponent,
   ],
   imports: [
     BrowserModule,

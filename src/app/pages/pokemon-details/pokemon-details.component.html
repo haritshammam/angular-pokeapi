@@ -1,5 +1,22 @@
 <app-nav></app-nav>
 
 <div *ngIf="pokemon" class="page-container">
-  <pokecard [data]="pokemon"></pokecard>
+  <div
+    class="grid grid-cols-1 gap-2 text-center mb-2 max-w-md mx-auto"
+    [ngClass]="{ 'grid-cols-2': pokemon.pokemonId > 1 }"
+  >
+    <a
+      class="btn-round rounded-2xl"
+      *ngIf="pokemon.pokemonId > 1"
+      [routerLink]="['/pokedex-list', pokemon.pokemonId - 1]"
+      >#{{ pokemon.pokemonId - 1 }}</a
+    >
+    <a
+      class="btn-round rounded-2xl"
+      [routerLink]="['/pokedex-list', pokemon.pokemonId + 1]"
+      >#{{ pokemon.pokemonId + 1 }}</a
+    >
+  </div>
+
+  <pokecard-detail [data]="pokemon"></pokecard-detail>
 </div>

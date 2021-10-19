@@ -3,12 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+  p {
+    @apply text-gray-700
+  }
+
   h1 {
     @apply text-4xl font-extrabold text-gray-800 md:text-center;
   }
 
   h2 {
     @apply font-bold text-2xl text-gray-700;
+  }
+
+  h3 {
+    @apply font-bold text-xl text-gray-700;
   }
 
   section {

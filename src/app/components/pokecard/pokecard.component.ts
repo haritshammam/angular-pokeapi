@@ -80,41 +80,7 @@ export class CardComponent implements OnInit {
       'bg-pokemon-type-dragon':
         pokemonType === 'dragon' && targetProps === 'bg',
       'bg-pokemon-type-dark': pokemonType === 'dark' && targetProps === 'bg',
-      'bg-pokemon-type-fairy': pokemonType === 'fairy' && targetProps === 'bg',
-      'text-pokemon-type-normal':
-        pokemonType === 'normal' && targetProps === 'text',
-      'text-pokemon-type-fighting':
-        pokemonType === 'fighting' && targetProps === 'text',
-      'text-pokemon-type-flying':
-        pokemonType === 'flying' && targetProps === 'text',
-      'text-pokemon-type-poison':
-        pokemonType === 'poison' && targetProps === 'text',
-      'text-pokemon-type-ground':
-        pokemonType === 'ground' && targetProps === 'text',
-      'text-pokemon-type-rock':
-        pokemonType === 'rock' && targetProps === 'text',
-      'text-pokemon-type-bug': pokemonType === 'bug' && targetProps === 'text',
-      'text-pokemon-type-ghost':
-        pokemonType === 'ghost' && targetProps === 'text',
-      'text-pokemon-type-steel':
-        pokemonType === 'steel' && targetProps === 'text',
-      'text-pokemon-type-grass':
-        pokemonType === 'grass' && targetProps === 'text',
-      'text-pokemon-type-fire':
-        pokemonType === 'fire' && targetProps === 'text',
-      'text-pokemon-type-water':
-        pokemonType === 'water' && targetProps === 'text',
-      'text-pokemon-type-electric':
-        pokemonType === 'electric' && targetProps === 'text',
-      'text-pokemon-type-psychic':
-        pokemonType === 'psychic' && targetProps === 'text',
-      'text-pokemon-type-ice': pokemonType === 'ice' && targetProps === 'text',
-      'text-pokemon-type-dragon':
-        pokemonType === 'dragon' && targetProps === 'text',
-      'text-pokemon-type-dark':
-        pokemonType === 'dark' && targetProps === 'text',
-      'text-pokemon-type-fairy':
-        pokemonType === 'fairy' && targetProps === 'text',
+      'bg-pokemon-type-fairy': pokemonType === 'fairy' && targetProps === 'bg'
     };
   }
 }
